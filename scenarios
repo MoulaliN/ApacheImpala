@@ -1,1 +1,11 @@
+#Scenario 1
+#Add a field to the base table to incoeporate the date loaded
+#You can use from_unixtime(unix_timestamp()) while inserting
 
+#For Example you have 2 tables
+#create table t1(c1 String);
+#create table t2(c1 String, c2 timestamp);
+
+#Now you can populate table t2 from t1 with current timestamp
+
+impala-shell -k -i haddde-impala.company.com:21000 --ssl -q 'insert into table db.t2 select *, from_unix(unix_timestamp()) as c2 from t1;'
