@@ -1,3 +1,9 @@
 invalidate metadata table_name;
 
 refresh table_name;
+
+impala-shell -k -i haddde-impala.company.com:21000 --ssl-q "SET EXEC_TIME_LIMIT_S=43200;"
+impala-shell -k -i hsddde-impala.company.com:21000 --ssl -q "COMPUTE STATS db_name.table_name;"
+
+COMPUTE INCREMENTAL STATS db_name.table_name partition ( year IN (2017, 2018, 2019, 2020, 2021, 2022, 2023));
+
