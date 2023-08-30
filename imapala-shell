@@ -1,0 +1,2 @@
+impala-shell -k -i hadprd-impala.company.com:21000 --ssl -f sample_impala_query_file.sql
+impala-shell -k -i hadprd-impala.company.com:21000 --ssl -q 'SELECt * FROM sampleDb.sampleTable;'
