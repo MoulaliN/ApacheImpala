@@ -1,0 +1,3 @@
+invalidate metadata table_name;
+
+refresh table_name;
